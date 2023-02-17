@@ -30,6 +30,7 @@ function App() {
             <h2>Making everything okey...</h2>
             <div className="progress-bar">
               <div className="filler"></div>
+              <div className="loading-text">Loading...</div>
             </div>
           </div>
         </div>
