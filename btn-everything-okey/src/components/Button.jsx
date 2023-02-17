@@ -42,13 +42,13 @@ function App() {
     <div className="App">
       <div className="vintage-button-container">
         <button className="vintage-button" onClick={handleClick}>
-          Make everything okey
+          Make everything okay
         </button>
       </div>
       {isMakingEverythingOk && (
         <div className="overlay">
           <div className="popup">
-            <h2>Making everything okey...</h2>
+            <h2>Making everything okay...</h2>
             <div className="progress-bar">
               <div className="filler"></div>
               <div className="loading-text">Loading...</div>
