@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Button.css";
 
 function App() {
   const [isMakingEverythingOk, setIsMakingEverythingOk] = useState(false);
   const [isEverythingOk, setIsEverythingOk] = useState(false);
+  const [timerId, setTimerId] = useState(null);
 
   const handleClick = () => {
     setIsMakingEverythingOk(true);
-    setTimeout(() => {
+    const id = setTimeout(() => {
       setIsMakingEverythingOk(false);
       setIsEverythingOk(true);
     }, 4000);
+    setTimerId(id);
   };
 
   const handleContinue = () => {
     setIsEverythingOk(false);
   };
+
+  useEffect(() => {
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, [timerId]);
 
   return (
     <div className="App">
