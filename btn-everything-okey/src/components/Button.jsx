@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="center-container">
+      <div className="vintage-button-container">
         <button className="vintage-button" onClick={handleClick}>
           Make everything okey
         </button>

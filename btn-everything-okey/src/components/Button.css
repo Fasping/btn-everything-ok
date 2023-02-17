@@ -12,6 +12,13 @@
   transition: all 0.2s;
 }
 
+.vintage-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .vintage-button:hover {
   background-color: #eee;
 }
@@ -98,13 +105,6 @@
 
 .popup button:active {
   top: 2px;
-}
-
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 .progress-bar {
