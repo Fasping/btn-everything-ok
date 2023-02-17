@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Button.css";
+import Confetti from "react-confetti";
 
 function App() {
   const [isMakingEverythingOk, setIsMakingEverythingOk] = useState(false);
   const [isEverythingOk, setIsEverythingOk] = useState(false);
   const [timerId, setTimerId] = useState(null);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [confettiTimerId, setConfettiTimerId] = useState(null);
 
   const handleClick = () => {
     setIsMakingEverythingOk(true);
@@ -17,6 +20,11 @@ function App() {
 
   const handleContinue = () => {
     setIsEverythingOk(false);
+    setShowConfetti(true);
+    const id = setTimeout(() => {
+      setShowConfetti(false);
+    }, 3000);
+    setConfettiTimerId(id);
   };
 
   useEffect(() => {
@@ -24,8 +32,11 @@ function App() {
       if (timerId) {
         clearTimeout(timerId);
       }
+      if (confettiTimerId) {
+        clearTimeout(confettiTimerId);
+      }
     };
-  }, [timerId]);
+  }, [timerId, confettiTimerId]);
 
   return (
     <div className="App">
@@ -58,6 +69,9 @@ function App() {
             </button>
           </div>
         </div>
+      )}
+      {showConfetti && (
+        <Confetti width={window.innerWidth} height={window.innerHeight} />
       )}
     </div>
   );
