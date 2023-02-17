@@ -23,7 +23,7 @@ function App() {
     setShowConfetti(true);
     const id = setTimeout(() => {
       setShowConfetti(false);
-    }, 3000);
+    }, 5000);
     setConfettiTimerId(id);
   };
 
